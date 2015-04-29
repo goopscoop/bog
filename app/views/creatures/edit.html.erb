@@ -1,0 +1,7 @@
+<h1>Edit the horror</h1>
+
+<%= bootstrap_form_for @creature do |f| %>
+  <%= f.text_field :name, :value => @creature.name %>
+  <%= f.text_field :desc, :value => @creature.desc %>
+  <%= f.primary %>
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Welcome to the BOG!</h1>
+
+<% @creatures.each do |p| %>
+  <li><%= link_to p.name, p %></li>
+<% end %>
+
+<%= link_to "Document new horror", new_creature_path, :class => "btn btn-primary" %>

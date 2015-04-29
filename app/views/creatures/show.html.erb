@@ -1,0 +1,8 @@
+<h1>Here's the horror</h1>
+
+<%= @creature.inspect %>
+
+<br>
+
+<%= link_to "Edit Horror", edit_creature_path, :class => "btn btn-primary" %>
+<%= link_to "Remove Horror", @creature, :method => "delete", :class => "btn btn-primary" %>
