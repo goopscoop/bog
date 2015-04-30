@@ -1,0 +1,6 @@
+<%= bootstrap_form_for @creature do |f| %>
+  <%= f.text_field :name, :value => @creature.name %>
+  <%= f.text_field :desc, :value => @creature.desc %>
+  <%= f.collection_check_boxes :tag_ids, @tags, :id, :name %>
+  <%= f.primary %>
+<% end %>

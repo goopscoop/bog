@@ -1,7 +1,11 @@
 <h1>Here's the horror</h1>
 
-<%= @creature.inspect %>
-
+<h2><%= @creature.name %></h2>
+<p><%= @creature.desc %> </p>
+<h2>Assosiated Tags</h2>
+<% @tags.each do |t| %>
+  <li><%= link_to t.name, t %></li>
+<% end %>
 <br>
 
 <%= link_to "Edit Horror", edit_creature_path, :class => "btn btn-primary" %>
