@@ -34,8 +34,10 @@
   </div><!-- /.navbar-collapse -->
 </nav>
   <div class="container">
-    <%= render 'layouts/flash' %>
-    <%= yield %>
+    <div class="col-md-10 col-md-offset-1">
+      <%= render 'layouts/flash' %>
+      <%= yield %>
+    </div>
   </div>
 </body>
 </html>

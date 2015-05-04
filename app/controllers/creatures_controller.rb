@@ -1,3 +1,5 @@
+
+
 class CreaturesController < ApplicationController
 
   def index
@@ -20,6 +22,9 @@ class CreaturesController < ApplicationController
   def show
     @creature = Creature.find(params[:id])
     @tags = Tag.joins(:creatures).where(creatures: {id: params[:id]})
+    data = reddit Creature.name
+    @links = data["data"]["children"]
+    # render json: @links
   end
 
   def update
@@ -50,5 +55,19 @@ class CreaturesController < ApplicationController
   def creature_params
     params.require(:creature).permit(:name,:desc)
   end
+
+def reddit search
+  require 'typhoeus'
+
+  request = Typhoeus::Request.new(
+  "http://www.reddit.com/search.json?q",
+  method: :get,
+  params: {q: search}
+  )
+
+  response = request.run
+
+  JSON.parse response.body
+end
 
 end

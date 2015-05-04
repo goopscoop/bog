@@ -34,7 +34,7 @@ class TagsController < ApplicationController
     @creatures = Creature.joins(:tags).where(tags: {id: params[:id]})
     if @creatures.length > 0
       flash[:danger] = "Cannot delete. Tag is associated with one or more creatures"
-      redirect_to tag_path
+      redirect_to tags_path
     else
       @tag.destroy
     end
